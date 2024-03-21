@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page</title>
+  <link rel="stylesheet" href="assets/CSS/page1.css">
+</head>
+<body>
+  <div class="container">
+    <div class="left-section">
+      <!-- You can put your image here or use CSS to set the background image -->
+    </div>
+    <div class="right-section">
+      <div class="content">
+        <h1>SORTING HAT</h1>
+        <div class="buttons">
+          <button id="beginButton" onmouseover="playClickSound()">SORT ME</button>
+          <button id="returnButton" onmouseover="playClickSound()">EXIT</button>
+          <button id="helpButton" onclick="toggleHelp()" onmouseover="playClickSound()">HELP</button>
+        </div>
+      </div>
+    </div>
+    <a href="index.html" class="upper-left-link">Hogwarts</a>
+  </div>
+  <audio id="backgroundMusic" autoplay>
+    <source src="assets/sounds/music.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <img src="assets/images/sound-icon.png" id="soundIcon" onclick="toggleMute()">
+  <audio id="clickSound">
+    <source src="assets/sounds/clicksound.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('returnButton').addEventListener('click', function(event) {
+      event.preventDefault();
+      document.body.classList.add('fadeout');
+      setTimeout(function() {
+        window.location.href = 'index.html';
+      }, 1000);
+    });
+
+    document.getElementById('beginButton').addEventListener('click', function(event) {
+      event.preventDefault();
+      // Create a div to contain the video
+      var videoContainer = document.createElement('div');
+      videoContainer.classList.add('video-container');
+      // Create the video element
+      var video = document.createElement('video');
+      // Update the video source with the correct path
+      video.src = 'assets/video/entrance.mp4'; // Adjusted path
+      video.autoplay = true;
+      video.loop = false;
+      // Add event listener for timeupdate event
+      video.addEventListener('timeupdate', function() {
+        // Check if 20 seconds have elapsed
+        if (video.currentTime >= 34) {
+          // After 20 seconds, proceed with fading effect and changing link
+          document.body.classList.add('fadeout');
+          setTimeout(function() {
+            window.location.href = 'page2.html';
+          }, 1000);
+        }
+      });
+      // Append the video to the container
+      videoContainer.appendChild(video);
+      // Append the container to the body
+      document.body.appendChild(videoContainer);
+    });
+
+    // Function to create the dynamic anchor element
+    var link = document.createElement('a');
+    link.href = 'page2.html';
+    document.body.appendChild(link);
+  });
+</script>
+  <script src="assets/JS/page1.js"></script>
+</body>
+</html>
