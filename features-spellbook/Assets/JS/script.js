@@ -9,7 +9,7 @@ document.getElementById('launchButton').addEventListener('click', function(event
 
 
 document.getElementById('exitButton').addEventListener('click', function() {
-    window.location.href = '.../index.html'; // Change 'previousPage.html' to the appropriate page
+    window.location.href = '../index.html'; // Change 'previousPage.html' to the appropriate page
 });
 
     <button id="exitButton">&#8592;</button>
