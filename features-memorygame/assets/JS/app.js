@@ -4,51 +4,51 @@ document.addEventListener('DOMContentLoaded', () => {
   const cardArray = [
     {
       name: '1',
-      img: '../images/1.png'
+      img: './images/1.png'
     },
     {
       name: '2',
-      img: '../images/2.png'
+      img: './images/2.png'
     },
     {
       name: '3',
-      img: '../images/3.png'
+      img: './images/3.png'
     },
     {
       name: '4',
-      img: '../images/4.png'
+      img: './images/4.png'
     },
     {
       name: '5',
-      img: '../images/5.png'
+      img: './images/5.png'
     },
     {
       name: '6',
-      img: '../images/6.png'
+      img: './images/6.png'
     },
     {
       name: '1',
-      img: '../images/1.png'
+      img: './images/1.png'
     },
     {
       name: '2',
-      img: '../images/2.png'
+      img: './images/2.png'
     },
     {
       name: '3',
-      img: '../images/3.png'
+      img: './images/3.png'
     },
     {
       name: '4',
-      img: '../images/4.png'
+      img: './images/4.png'
     },
     {
       name: '5',
-      img: '../images/5.png'
+      img: './images/5.png'
     },
     {
       name: '6',
-      img: '../images/6.png'
+      img: './images/6.png'
     }
   ]
 
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function createBoard() {
     for (let i = 0; i < cardArray.length; i++) {
       const card = document.createElement('img')
-      card.setAttribute('src', '../images/brain.png')
+      card.setAttribute('src', './images/brain.png')
       card.setAttribute('data-id', i)
       card.addEventListener('click', flipCard)
       grid.appendChild(card)
@@ -88,20 +88,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const optionTwoId = cardsChosenId[1]
     
     if(optionOneId == optionTwoId) {
-      cards[optionOneId].setAttribute('src', '../images/brain.png')
-      cards[optionTwoId].setAttribute('src', '../images/brain.png')
+      cards[optionOneId].setAttribute('src', './images/brain.png')
+      cards[optionTwoId].setAttribute('src', './images/brain.png')
     }
     else if (cardsChosen[0] === cardsChosen[1]) {
-      cards[optionOneId].setAttribute('src', '../images/white.png')
-      cards[optionTwoId].setAttribute('src', '../images/white.png')
+      cards[optionOneId].setAttribute('src', './images/white.png')
+      cards[optionTwoId].setAttribute('src', './images/white.png')
       cards[optionOneId].removeEventListener('click', flipCard)
       cards[optionTwoId].removeEventListener('click', flipCard)
       cardsWon.push(cardsChosen)
       currentScore++;
       scoreElement.textContent = 'Score: ' + currentScore;
     } else {
-      cards[optionOneId].setAttribute('src', '../images/brain.png')
-      cards[optionTwoId].setAttribute('src', '../images/brain.png')
+      cards[optionOneId].setAttribute('src', './images/brain.png')
+      cards[optionTwoId].setAttribute('src', './images/brain.png')
     }
     cardsChosen = []
     cardsChosenId = []
