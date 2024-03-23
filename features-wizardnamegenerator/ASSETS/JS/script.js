@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // After the GIF duration, redirect to the next page
         setTimeout(function() {
-            window.location.href = "https://precious-carbonell.github.io/Hogwarts/";
+            window.location.href = "generate.html";
         }, gifDuration - 2000); // Adjust the timing slightly before the end
     });
 });
