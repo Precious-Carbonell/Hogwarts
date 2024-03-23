@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/brain.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Hogwarts - Memory Game</title>
+    
+</head>
+<body>
+
+    <div id="game-container">
+        <h1>MEMORY GAME</h1>
+        <div id="grid"></div>
+        <div class="score">
+            <div id="score">Score: 0</div>
+            <div id="timer">Time: 0</div>
+        </div>
+        <div class="btn-container">
+            <button id="start-btn">Start Game</button>
+            <button id="reset-btn">Reset</button>
+        </div>
+        <div id="gameOverModal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <h1>Time is Over!</h1>
+              <img src="https://cdn-icons-png.flaticon.com/512/4893/4893024.png" alt="" width="300px">
+              <h2>Score: <span id="finalScore">0</span></h2>
+            </div>
+          </div>
+          <div id="victoryModal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <h1>You Win!</h1>
+              <img src="https://cdn.icon-icons.com/icons2/2474/PNG/512/award_medal_gold_first_icon_149698.png" alt="victoryImage" width="300px">
+              <h2>Score: <span id="finalScoreVictory">0</span></h2>
+            </div>
+       
+    </div>
+
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
+
