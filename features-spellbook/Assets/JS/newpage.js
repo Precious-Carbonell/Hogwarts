@@ -1,7 +1,7 @@
 function start() {
   document.body.classList.add('fadeout');
   setTimeout(function() {
-      window.location.href = 'newPage.html';
+      window.location.href = 'newpage.html';
   }, 1000);
 }
 
