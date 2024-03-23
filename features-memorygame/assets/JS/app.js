@@ -1,55 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
-
   //card options
   const cardArray = [
-    {
-      name: '1',
-      img: './images/1.png'
-    },
-    {
-      name: '2',
-      img: './images/2.png'
-    },
-    {
-      name: '3',
-      img: './images/3.png'
-    },
-    {
-      name: '4',
-      img: './images/4.png'
-    },
-    {
-      name: '5',
-      img: './images/5.png'
-    },
-    {
-      name: '6',
-      img: './images/6.png'
-    },
-    {
-      name: '1',
-      img: './images/1.png'
-    },
-    {
-      name: '2',
-      img: './images/2.png'
-    },
-    {
-      name: '3',
-      img: './images/3.png'
-    },
-    {
-      name: '4',
-      img: './images/4.png'
-    },
-    {
-      name: '5',
-      img: './images/5.png'
-    },
-    {
-      name: '6',
-      img: './images/6.png'
-    }
+    { name: '1', img: 'assets/images/1.png' },
+    { name: '2', img: 'assets/images/2.png' },
+    { name: '3', img: 'assets/images/3.png' },
+    { name: '4', img: 'assets/images/4.png' },
+    { name: '5', img: 'assets/images/5.png' },
+    { name: '6', img: 'assets/images/6.png' },
+    { name: '1', img: 'assets/images/1.png' },
+    { name: '2', img: 'assets/images/2.png' },
+    { name: '3', img: 'assets/images/3.png' },
+    { name: '4', img: 'assets/images/4.png' },
+    { name: '5', img: 'assets/images/5.png' },
+    { name: '6', img: 'assets/images/6.png' }
   ];
 
   cardArray.sort(() => 0.5 - Math.random());
@@ -74,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function createBoard() {
     for (let i = 0; i < cardArray.length; i++) {
       const card = document.createElement('img');
-      card.setAttribute('src', './images/brain.png');
+      card.setAttribute('src', 'assets/images/brain.png');
       card.setAttribute('data-id', i);
       card.addEventListener('click', flipCard);
       grid.appendChild(card);
@@ -86,26 +49,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const cards = document.querySelectorAll('img');
     const optionOneId = cardsChosenId[0];
     const optionTwoId = cardsChosenId[1];
-    
-    if(optionOneId == optionTwoId) {
-      cards[optionOneId].setAttribute('src', './images/brain.png');
-      cards[optionTwoId].setAttribute('src', './images/brain.png');
-    }
-    else if (cardsChosen[0] === cardsChosen[1]) {
-      cards[optionOneId].setAttribute('src', './images/white.png');
-      cards[optionTwoId].setAttribute('src', './images/white.png');
+
+    if (optionOneId === optionTwoId) {
+      cards[optionOneId].setAttribute('src', 'assets/images/brain.png');
+      cards[optionTwoId].setAttribute('src', 'assets/images/brain.png');
+    } else if (cardsChosen[0] === cardsChosen[1]) {
+      cards[optionOneId].setAttribute('src', 'assets/images/white.png');
+      cards[optionTwoId].setAttribute('src', 'assets/images/white.png');
       cards[optionOneId].removeEventListener('click', flipCard);
       cards[optionTwoId].removeEventListener('click', flipCard);
       cardsWon.push(cardsChosen);
       currentScore++;
       scoreElement.textContent = 'Score: ' + currentScore;
     } else {
-      cards[optionOneId].setAttribute('src', './images/brain.png');
-      cards[optionTwoId].setAttribute('src', './images/brain.png');
+      setTimeout(() => {
+        cards[optionOneId].setAttribute('src', 'assets/images/brain.png');
+        cards[optionTwoId].setAttribute('src', 'assets/images/brain.png');
+      }, 1000);
     }
     cardsChosen = [];
     cardsChosenId = [];
-    scoreElement.textContent = 'Score: ' + cardsWon.length;
+    scoreElement.textContent = 'Score: ' + currentScore;
 
     if (cardsWon.length === cardArray.length / 2) {
       clearInterval(timer);
@@ -134,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
     finalScoreElement.textContent = currentScore;
     gameOverModal.style.display = 'block';
     const closeButton = document.getElementsByClassName('close')[0];
-    closeButton.addEventListener('click', function() {
+    closeButton.addEventListener('click', function () {
       gameOverModal.style.display = 'none';
     });
   }
@@ -143,9 +107,8 @@ document.addEventListener('DOMContentLoaded', () => {
     finalScoreVictoryElement.textContent = currentScore;
     victoryModal.style.display = 'block';
     const closeButton = document.getElementsByClassName('close')[1];
-    closeButton.addEventListener('click', function() {
-      victoryModal.style
-.display = 'none';
+    closeButton.addEventListener('click', function () {
+      victoryModal.style.display = 'none';
     });
     gameOver = true;
     resetGame();
@@ -185,15 +148,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const startButton = document.getElementById('start-btn');
-  startButton.addEventListener('click', () => {
-    startGame();
-    startTimer();
-  });
+  startButton.addEventListener('click', startGame);
 
   const resetButton = document.getElementById('reset-btn');
   resetButton.addEventListener('click', resetGame);
-  createBoard();
-
-  // Ensure the game starts automatically on DOMContentLoaded
-  startGame();
 });
+
+
+
+
