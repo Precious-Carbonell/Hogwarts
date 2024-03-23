@@ -21,11 +21,11 @@ Our project encompasses a range of web development technologies:
 
 This wouldn't have been possible without the contributions of our talented team members:
 
-- **Precious Carbonell**: Led the development of the main structure and login/signup functionality.
-- **Euna Angeles**: Enchanted the Sorting Hat feature, ensuring it accurately sorted users into their respective Hogwarts houses.
-- **Jerry Nares**: Crafted the Wizard Name Generator feature, providing users with personalized wizard names.
-- **Edwin Reyes**: Conjured the Spell Book Quiz, challenging users' knowledge of magical spells and their history.
-- **James Gamara**: Curated the Wand Store, offering a wide selection of magical wands for aspiring witches and wizards.
+- **Precious Carbonell (Precious-Carbonell)**: Led the development of the main structure and login/signup functionality.
+- **Euna Angeles (eyuewna)**: Enchanted the Sorting Hat feature, ensuring it accurately sorted users into their respective Hogwarts houses.
+- **Jerry Nares (RevRev30)**: Crafted the Wizard Name Generator feature, providing users with personalized wizard names.
+- **Edwin Reyes (Nostalia17)**: Conjured the Spell Book Quiz, challenging users' knowledge of magical spells and their history.
+- **James Gamara (848902)**: Curated the Wand Store, offering a wide selection of magical wands for aspiring witches and wizards.
 
 ## Features ✨
 
