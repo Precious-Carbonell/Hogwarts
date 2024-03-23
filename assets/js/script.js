@@ -23,6 +23,13 @@ h4all.forEach(function (elem) {
   });
 });
 
+// scrolling to the bottommost part of the page when arrow is clicked
+var arrow = document.querySelector("#arrow");
+arrow.addEventListener("click", function() {
+  var page4 = document.querySelector("#page4");
+  page4.scrollIntoView({ behavior: "smooth" });
+});
+
 gsap.to("#nav", {
   backgroundColor: "#000",
   duration: 0.5,
