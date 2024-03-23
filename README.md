@@ -21,7 +21,7 @@ Our project encompasses a range of web development technologies:
 
 This wouldn't have been possible without the contributions of our talented team members:
 
-- **Precious Carbonell (Precious-Carbonell)**: Led the development of the main structure and login/signup functionality.
+- **Precious Carbonell (Precious-Carbonell)**: Led the development of the main structure home page and login/signup functionality.
 - **Euna Angeles (eyuewna)**: Enchanted the Sorting Hat feature, ensuring it accurately sorted users into their respective Hogwarts houses.
 - **Jerry Nares (RevRev30)**: Crafted the Wizard Name Generator feature, providing users with personalized wizard names.
 - **Edwin Reyes (Nostalia17)**: Conjured the Spell Book Quiz, challenging users' knowledge of magical spells and their history.
