@@ -1,14 +1,14 @@
 # 🏰 Hogwarts Interactive Website 🧙
 
-## Introduction
+## Introduction 🌟
 
 Welcome to our Hogwarts Interactive Website! Immerse yourself in the enchanting world of Harry Potter as you explore our magical digital creation. From sorting hat quizzes to spell book quizzes, wand stores, and more, there's plenty of wizarding fun to be had here!
 
-## Acknowledgements
+## Acknowledgements 🤝🏻
 
 We extend our sincerest thanks to J.K. Rowling for creating the beloved Harry Potter universe, which served as the inspiration for our project. Additionally, we would like to thank our instructors for their guidance and support throughout the development process.
 
-## Topics Covered
+## Topics Covered 📚
 
 Our project encompasses a range of web development technologies:
 
@@ -17,7 +17,7 @@ Our project encompasses a range of web development technologies:
 - JavaScript: Empowered interactivity and dynamic features.
 - Bootstrap: Leveraged for responsive design and layout components.
 
-## Authors
+## Collaborators 🧑‍💻
 
 This wouldn't have been possible without the contributions of our talented team members:
 
@@ -27,7 +27,7 @@ This wouldn't have been possible without the contributions of our talented team 
 - **Edwin Reyes**: Conjured the Spell Book Quiz, challenging users' knowledge of magical spells and their history.
 - **James Gamara**: Curated the Wand Store, offering a wide selection of magical wands for aspiring witches and wizards.
 
-## Features
+## Features ✨
 
 - **Sorting Hat Quiz**: Discover your Hogwarts house and embrace the traits that define it.
 - **Wizard Name Generator**: Unveil your unique wizarding identity with our personalized name generator.
