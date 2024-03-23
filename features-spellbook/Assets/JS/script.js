@@ -7,9 +7,6 @@ document.getElementById('launchButton').addEventListener('click', function(event
     }, 6000); // Change 3000 to 6000
 });
 
-
 document.getElementById('exitButton').addEventListener('click', function() {
-    window.location.href = 'https://precious-carbonell.github.io/Hogwarts/'; // Change 'previousPage.html' to the appropriate page
-});
-
-    <button id="exitButton">&#8592;</button>
+    window.location.href = 'https://precious-carbonell.github.io/Hogwarts/';
+}
