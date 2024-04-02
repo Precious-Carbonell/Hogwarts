@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sorting Hat</title>
+  <link rel="shortcut icon" type="image/jpg" href="assets/images/haticon.png"/>
+  <link rel="stylesheet" href="assets/CSS/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="title">
+        <h1>
+            <span>M</span><span>E</span><span->M</span-><span>O</span><span>R</span><span>Y</span>
+            <br><span>G</span><span>A</span><span>M</span><span>E</span>
+            <!-- Add the image here -->
+            <img src="assets/images/wandicon.png" class="letter-image" alt="Image">
+        </h1>
+        <button id="launchButton">Launch</button>
+        <button id="exitButton">&#8592;</button>
+        <audio id="backgroundMusic" autoplay loop>
+            <source src="assets/sounds/bgmusic.mp3" type="audio/mpeg" autoplay>
+            Your browser does not support the audio element.
+        </audio>
+        <img src="assets/images/sound-icon.png" id="soundIcon" onclick="toggleMute()">
+    </div>
+</div>
+
+  <script>
+    function toggleMute() {
+      var audio = document.getElementById("backgroundMusic");
+      if (audio.paused) {
+        audio.play();
+        document.getElementById("soundIcon").src = "assets/images/sound-icon.png";
+      } else {
+        audio.pause();
+        document.getElementById("soundIcon").src = "assets/images/sound-muted.png";
+      }
+    }
+
+    document.getElementById('launchButton').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default action
+        document.body.classList.add('fadeout'); // Add the 'fadeout' class to the body
+
+        setTimeout(function() {
+            window.location.href = "page1.html"; // Redirect to page1.html
+        }, 6000); // Change 3000 to 6000
+    });
+
+    document.getElementById('exitButton').addEventListener('click', function() {
+      window.location.href = "https://precious-carbonell.github.io/Hogwarts/";
+    });
+
+    // Automatically play background music when the page loads
+    window.addEventListener('load', function() {
+      document.getElementById('backgroundMusic').play();
+    });
+  </script>
+</body>
+</html>
+
+
