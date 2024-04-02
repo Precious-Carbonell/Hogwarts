@@ -1,0 +1,180 @@
+@font-face {
+    font-family: "MyCustomFont";
+    src: url("../fonts/AnimalesFantastic-lGly.ttf");
+}
+
+body{
+    background-image: url("../images/bg.jpg");
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'MyCustomFont';
+    color: rgb(255, 255, 255);
+}
+#game-container{
+    height: 700px;
+}
+img{
+    width: 100px;
+    border: 2px solid  white;
+}
+#grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    grid-template-rows: repeat(3, 1fr); 
+    gap: 8px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.score{
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 23pt;
+    margin-top: 10%;
+}
+#timer{
+    border:2px solid darkgray;
+    padding: 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+#score{
+    border:2px solid darkgray;
+    padding: 10px;
+    border-radius: 5px;
+}
+.btn-container{
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 23pt;
+    margin-top: 10%;
+}
+#start-btn,
+#reset-btn{
+    margin: 5px;
+    border: none;
+    background-color: #212529;
+    color: white;
+    cursor: pointer;
+    font-size: 15pt;
+    border-radius: 8px;
+    padding: 10px;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.308);
+    color: #000000;
+}
+
+.modal-content {
+    border-radius: 4px;
+    background-color: #ffffff;
+    margin: 3% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    max-width: 400px;
+    transition:  0.3s ease;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+@media screen and (max-width:600px){
+    #game-container{
+        width: 240px;
+        padding: 10px;
+        height: auto;
+    }
+    h1{
+        font-size: 19pt;
+    }
+    #grid{
+        grid-template-columns: repeat(3, 1fr); /* Altere para 3 colunas iguais */
+        grid-template-rows: repeat(3, 1fr); 
+        gap: 10px;
+    }
+    .modal{
+        background-color: #212529e8;
+    }
+    .modal-content{
+        margin-top: 10vh;
+        width: 250px;
+    }
+    img{
+        width:100%;
+    }
+    .score, #timer{
+        font-size: 13pt;
+    }
+    #start-btn,
+    #reset-btn{
+        font-size: 10pt;
+        width: 90px;
+    }
+}
+
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #000000;
+    color:#ffffff;
+    text-align: center;
+    font-family: 'MyCustomFont';
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+footer > ul > li{
+    list-style: none;
+    float:left;
+    text-align:center;
+}
+a{
+    text-decoration: none;
+    color:#ffffff;
+    margin: 5px;
+}
+footer a:hover{
+    text-decoration: underline;
+}
+
+#exitButton {
+    color:#ffffff;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    font-size: 60px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
