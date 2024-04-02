@@ -1,164 +1,154 @@
-body{
-    background-image: url("../images/bg.jpg");
-    text-align: center;
+@font-face {
+    font-family: "MyCustomFont";
+    src: url("../fonts/AnimalesFantastic-lGly.ttf");
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #efde83;
+    margin: 0;
+    padding: 0;
+    transition: background 1s ease-in-out;
+        cursor: url("../images/cursor1.png"), auto;
+
+}
+
+.container {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    font-family: Arial, Helvetica, sans-serif;
-    color: rgb(255, 255, 255);
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
 }
-#game-container{
-    height: 700px;
+
+h1 {
+    color: #222222;
+    font-size: 120px;
+    font-style: normal;
+    font-family: "MyCustomFont";
+    letter-spacing: 10px; 
+    line-height: -20px; 
+    margin: 1px; 
+    text-align: center;
 }
-img{
-    width: 100px;
-    border: 2px solid  white;
+
+h1 span {
+    display: inline-block;
+    animation: fall 1s ease forwards;
+    opacity: 0;
+    transform: translateY(-100%);
 }
-#grid{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); 
-    grid-template-rows: repeat(3, 1fr); 
-    gap: 8px;
+
+/* Delay each letter animation */
+h1 span:nth-child(1) { animation-delay: 0.1s; }
+h1 span:nth-child(2) { animation-delay: 0.2s; }
+h1 span:nth-child(3) { animation-delay: 0.3s; }
+h1 span:nth-child(4) { animation-delay: 0.4s; }
+h1 span:nth-child(5) { animation-delay: 0.5s; }
+h1 span:nth-child(6) { animation-delay: 0.6s; }
+h1 span:nth-child(7) { animation-delay: 0.7s; }
+h1 span:nth-child(8) { animation-delay: 0.8s; }
+h1 span:nth-child(9) { animation-delay: 0.9s; }
+h1 span:nth-child(10) { animation-delay: 1s; }
+h1 span:nth-child(11) { animation-delay: 1.1s; }
+
+/* Animation for the wand image */
+.letter-image {
+    position: absolute;
+    bottom: 190px; 
+    left: 65%; 
+    transform: translateX(-50%);
+    width: 300px;
+    height: 300px; 
+    animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+    from {
+        transform: translateX(-50%) scale(1);
+    }
+    to {
+        transform: translateX(-50%) scale(1.1);
+    }
+}
+
+
+#middleImage {
+    animation: spin 2s linear;
+}
+
+@keyframes fall {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.options {
+    margin-top: 30px;
+}
+
+button {
+    padding: 20px 25px;
+    margin: 0 10px;
+    font-size:  25px;
+    font-family: "MyCustomFont";
     cursor: pointer;
-    width: 100%;
-    margin-bottom: 10px;
-}
-.score{
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    font-size: 23pt;
-    margin-top: 10%;
-}
-#timer{
-    border:2px solid darkgray;
-    padding: 10px;
-    margin-left: 10px;
-    border-radius: 5px;
-}
-#score{
-    border:2px solid darkgray;
-    padding: 10px;
-    border-radius: 5px;
-}
-.btn-container{
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    font-size: 23pt;
-    margin-top: 10%;
-}
-#start-btn,
-#reset-btn{
-    margin: 5px;
+    background-color: #ccb537;
+    color: #222222;
     border: none;
-    background-color: #212529;
-    color: white;
-    cursor: pointer;
-    font-size: 15pt;
-    border-radius: 8px;
-    padding: 10px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
 }
-.modal {
-    display: none;
+
+button:hover {
+    background-color: #877306;
+    transform: scale(1.1);
+}
+
+button:focus {
+    outline: none;
+}
+
+#exitButton {
     position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.308);
-    color: #000000;
-}
-
-.modal-content {
-    border-radius: 4px;
-    background-color: #ffffff;
-    margin: 3% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    max-width: 400px;
-    transition:  0.3s ease;
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
+    top: 10px;
+    left: 10px;
+    font-size: 60px;
+    background: none;
+    border: none;
     cursor: pointer;
 }
-@media screen and (max-width:600px){
-    #game-container{
-        width: 240px;
-        padding: 10px;
-        height: auto;
-    }
-    h1{
-        font-size: 19pt;
-    }
-    #grid{
-        grid-template-columns: repeat(3, 1fr); /* Altere para 3 colunas iguais */
-        grid-template-rows: repeat(3, 1fr); 
-        gap: 10px;
-    }
-    .modal{
-        background-color: #212529e8;
-    }
-    .modal-content{
-        margin-top: 10vh;
-        width: 250px;
-    }
-    img{
-        width:100%;
-    }
-    .score, #timer{
-        font-size: 13pt;
-    }
-    #start-btn,
-    #reset-btn{
-        font-size: 10pt;
-        width: 90px;
-    }
+
+@keyframes fadeout {
+    from { opacity: 1; }
+    to { opacity: 0; }
 }
 
-footer{
+body.fadeout {
+    animation: fadeout 5s forwards;
+    background-color: black;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+#soundIcon {
     position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 50px;
-    background-color: #000000;
-    color:#ffffff;
-    text-align: center;
-    font-family: 'Montserrat', sans-serif;
-    padding: 5px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-footer > ul > li{
-    list-style: none;
-    float:left;
-    text-align:center;
-}
-a{
-    text-decoration: none;
-    color:#ffffff;
-    margin: 5px;
-}
-footer a:hover{
-    text-decoration: underline;
+    bottom: 10px;
+    left: 10px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
 }
